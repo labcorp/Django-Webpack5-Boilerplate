@@ -15,10 +15,14 @@
     {% render_bundle 'vendors' 'js' %}
 </head>
 <body>
-{% include 'includes/nav.html' with title=title %}
+{% include 'includes/header.html' with title=title %}
+{% block content %}{% endblock content %}
+{% include 'includes/footer.html' %}
+
 <script>
+// jQuery is also available here...
 $(function() {
-    console.log('aaaaa');
+    //console.log('Hello World');
 })
 </script>
 

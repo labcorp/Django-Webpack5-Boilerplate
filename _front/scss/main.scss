@@ -1,5 +1,8 @@
-@import "~bootstrap/scss/bootstrap";
+@import "./theme.scss";
+@import "./ui.scss";
 
-body {
-  background-color: darken($dark, 5%);
+.jumbotron {
+    border-radius: 0;
 }
+
+@import "~bootstrap/scss/bootstrap";

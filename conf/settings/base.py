@@ -35,6 +35,9 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
+SITE_ID = 1
+AUTH_USER_MODEL = 'dj_account.User'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

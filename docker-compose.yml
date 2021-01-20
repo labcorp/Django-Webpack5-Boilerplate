@@ -3,6 +3,7 @@ version: '3.8'
 services:
   db:
     image: postgres:12.0-alpine
+    container_name: postgres
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
@@ -12,6 +13,7 @@ services:
       
   web:
     build: ./
+    container_name: django_application
     command: >
       sh -c "yarn serve & python manage.py runserver 0.0.0.0:8000"
     volumes:

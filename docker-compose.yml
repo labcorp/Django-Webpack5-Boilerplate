@@ -22,7 +22,7 @@ services:
     build: ./
     image: boilerplate/django
     container_name: app
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python manage.py runserver --settings=conf.settings.development 0.0.0.0:8000
     volumes:
       - ./:/usr/src/app/
     ports:

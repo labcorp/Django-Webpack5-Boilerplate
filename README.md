@@ -7,7 +7,7 @@ It should be pretty self explanatory, let me know if you need any help!
 3. [optional] Run `docker-compose exec web python manage.py createsuperuser`
 4. Profit...
 
-> Docker version not ready for production usage yet! Be careful.
+> Docker setup is not yet ready for production! Be careful.
 
 ### Basic usage (legacy, but still works)
 

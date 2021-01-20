@@ -4,6 +4,8 @@ from conf.settings.base import ENV, ROOT_DIR
 
 from conf.settings.initializers.database import *
 from conf.settings.initializers.webpack import *
+from conf.settings.initializers.logging import *
+
 
 PROJECT_NAME = 'Hello World'
 SECRET_KEY = ENV('SECRET_KEY')
@@ -19,5 +21,3 @@ PROJECT_APPS = [
     'apps.account.apps.AccountConfig', # Custom User Model
     'apps.web'
 ]
-
-from conf.settings.initializers.logging import *

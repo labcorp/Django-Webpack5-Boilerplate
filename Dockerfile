@@ -17,15 +17,12 @@ RUN apk update \
     
 # install dependencies
 RUN pip install --upgrade pip
-COPY ./requirements.txt .
-RUN pip install -r requirements.txt
-RUN yarn install --non-interactive --no-progress --ignore-optional
-
-# copy entrypoint.sh
-COPY ./entrypoint.sh .
 
 # copy project
-# COPY . .
+COPY . .
+
+RUN pip install -r requirements.txt
+RUN yarn install --frozen-lockfile --non-interactive --no-progress --ignore-optional
 
 # run entrypoint.sh
 ENTRYPOINT ["/usr/src/app/entrypoint.sh"]

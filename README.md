@@ -2,9 +2,10 @@
 It should be pretty self explanatory, let me know if you need any help!
 
 ### Docker usage
+0. Rename `.env.example` > `.env` and update it
 1. Run `docker-compose build`
 2. Run `docker-compose up -d`
-3. [optional] Run `docker-compose exec web python manage.py createsuperuser`
+3. [optional] Run `docker-compose exec app python manage.py createsuperuser`
 4. Profit...
 
 > Docker setup is not yet ready for production! Be careful.

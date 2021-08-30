@@ -1,11 +1,5 @@
 .navbar, footer {
-    background-color: darken($dark, 5%);
-    
     .navbar-brand {
         font-weight: bold;
-    }
-    
-    a {
-        color: lighten($primary, 25%);
     }
 }

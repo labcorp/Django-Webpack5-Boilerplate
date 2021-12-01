@@ -21,7 +21,7 @@ RUN pip install --upgrade pip
 # copy project
 COPY . .
 
-RUN pip install -r requirements.txt
+RUN pip install -r requirements-dev.txt
 RUN yarn install --frozen-lockfile --non-interactive --no-progress --ignore-optional
 
 # run entrypoint.sh

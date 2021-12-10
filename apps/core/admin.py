@@ -6,7 +6,7 @@ from apps.core.models import Log
 
 admin.site.site_header = settings.PROJECT_NAME
 admin.site.site_title = settings.PROJECT_NAME
-admin.site.enable_nav_sidebar = False
+admin.site.enable_nav_sidebar = True
 
 
 @admin.register(Log)

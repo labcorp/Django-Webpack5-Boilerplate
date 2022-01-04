@@ -1,4 +1,4 @@
 psycopg2-binary
-Django==4.0
+Django==4.0.1
 django-environ==0.8.1
 django-webpack-loader==1.4.1

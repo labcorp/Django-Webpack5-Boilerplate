@@ -27,3 +27,5 @@ ipython_config.py
 yarn.lock
 node_modules/
 _static/build/
+_static/dist/
+_static/src/

@@ -6,7 +6,7 @@
   "author": "Leandro Voltolino",
   "license": "MIT",
   "scripts": {
-    "serve": "yarn run webpack --watch --progress --mode development",
+    "serve": "yarn run webpack --watch --progress --env development --mode development",
     "build": "yarn run webpack --env production --mode production"
   },
   "devDependencies": {

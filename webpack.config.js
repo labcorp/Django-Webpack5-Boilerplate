@@ -29,13 +29,13 @@ const development_path = {
 module.exports = env => {
     let dev_mode = env.development || false;
     let build_path = dev_mode ? development_path : production_path;
-    
+
     return {
         mode: dev_mode ? 'development' : 'production',
-        devtool: 'inline-source-map',
-        
+        devtool: dev_mode ? 'inline-source-map' : 'nosources-source-map',
+
         entry: entrypoints,
-        
+
         module: {
             rules: [
                 {
@@ -57,7 +57,7 @@ module.exports = env => {
                 }
             ]
         },
-        
+
         plugins: [
             new CleanWebpackPlugin(),
             new BundleTracker({
@@ -72,14 +72,14 @@ module.exports = env => {
                 filename: dev_mode ? '[name].css' : '[name].min.css',
             }),
         ],
-        
+
         optimization: {
             minimize: true,
             minimizer: [new TerserPlugin({
                 extractComments: false,
             })],
         },
-        
+
         output: {
             filename: dev_mode ? '[name].js' : '[name].min.js',
             path: build_path.dest,

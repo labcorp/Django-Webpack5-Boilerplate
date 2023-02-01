@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-  db:
+  boilerplate_db:
     image: postgres:12.0-alpine
-    container_name: db
+    container_name: boilerplate_db
     volumes:
       - postgres_data:/var/lib/postgresql/data
     environment:
@@ -11,17 +11,17 @@ services:
       - POSTGRES_PASSWORD=db_password
       - POSTGRES_DB=db_database_dev
 
-  front:
+  boilerplate_front:
     image: boilerplate/django
-    container_name: front
+    container_name: boilerplate_front
     command: yarn serve
     volumes:
       - ./:/usr/src/app
 
-  app:
+  boilerplate_app:
     build: ./
     image: boilerplate/django
-    container_name: app
+    container_name: boilerplate_app
     command: python manage.py runserver --settings=conf.settings.development 0.0.0.0:8000
     volumes:
       - ./:/usr/src/app
@@ -31,8 +31,8 @@ services:
     env_file:
       - ./.env
     depends_on:
-      - db
-      - front
-      
+      - boilerplate_db
+      - boilerplate_front
+
 volumes:
   postgres_data:

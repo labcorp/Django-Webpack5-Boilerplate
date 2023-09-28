@@ -1,4 +1,4 @@
-FROM python:3.8.7-alpine
+FROM node:18-alpine
 
 # set work directory
 WORKDIR /usr/src/app
@@ -14,7 +14,14 @@ RUN apk update \
     python3-dev \
     musl-dev \
     yarn
-    
+
+# setup python and pip since we're using node image as base
+RUN python3 -m ensurepip && \
+    rm -r /usr/lib/python*/ensurepip && \
+    pip3 install --upgrade pip setuptools==45 && \
+    if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
+    rm -r /root/.cache
+
 # install dependencies
 RUN pip install --upgrade pip
 

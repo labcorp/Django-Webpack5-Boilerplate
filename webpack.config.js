@@ -62,7 +62,7 @@ module.exports = env => {
             new CleanWebpackPlugin(),
             new BundleTracker({
                 path: __dirname,
-                filename: './webpack-stats.json'
+                filename: 'webpack-stats.json'
             }),
             new webpack.ProvidePlugin({
                 $: 'jquery',

@@ -4,14 +4,7 @@
 python manage.py migrate
 yarn install --frozen-lockfile --non-interactive --no-progress --ignore-optional
 
-if [ ! -d "_logs" ]
-then
-    mkdir _logs
-fi
-
-if [ ! -d "_media" ]
-then
-    mkdir _media
-fi
+mkdir -p _logs
+mkdir -p _media
 
 exec "$@"

@@ -1,2 +1,2 @@
 -r requirements.txt
-ptvsd==4.3.2
+debugpy==1.8.0

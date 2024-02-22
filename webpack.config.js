@@ -27,6 +27,7 @@ const development_path = {
 }
 
 module.exports = env => {
+    console.log(env.development)
     let dev_mode = env.development || false;
     let build_path = dev_mode ? development_path : production_path;
 

@@ -15,6 +15,9 @@ RUN apk update \
     musl-dev \
     yarn
 
+# Python 3.11 stuff
+RUN rm /usr/lib/python3.11/EXTERNALLY-MANAGED
+
 # setup python and pip since we're using node image as base
 RUN python3 -m ensurepip && \
     rm -r /usr/lib/python*/ensurepip && \

@@ -1,4 +1,5 @@
 import 'bootstrap';
+import './theme_switcher';
 import '../scss/main.scss';
 
 // jQuery is available here

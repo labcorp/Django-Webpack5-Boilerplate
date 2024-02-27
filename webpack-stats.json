@@ -26,5 +26,7 @@
       "vendors.js"
     ]
   },
-  "publicPath": "/static/src/"
+  "publicPath": "/static/src/",
+  "error": "ModuleBuildError",
+  "message": "Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nFile to import not found or unreadable: ./custom_theme.scss.\n        on line 3 of _front/scss/theme.scss\n        from line 1 of _front/scss/main.scss\n>> @import \"./custom_theme.scss\";\n\n   ^\n"
 }

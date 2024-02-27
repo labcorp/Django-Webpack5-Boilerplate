@@ -1,4 +1,3 @@
-import 'bootstrap';
 import './theme_switcher';
 import '../scss/main.scss';
 
@@ -6,3 +5,5 @@ import '../scss/main.scss';
 $(function() {
     //console.log('Hello World...');
 });
+
+import 'bootstrap';

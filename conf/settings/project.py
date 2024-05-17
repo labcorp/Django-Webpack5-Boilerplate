@@ -1,3 +1,4 @@
+# pylint: disable=unused-wildcard-import, wildcard-import
 import os
 
 from conf.settings.base import ENV, ROOT_DIR

@@ -1,4 +1,6 @@
 [MASTER]
+load-plugins=pylint_django
+django-settings-module=conf.settings.development
 
 [MESSAGES CONTROL]
 disable=

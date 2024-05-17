@@ -1,4 +1,4 @@
-FROM node:18-alpine
+FROM nikolaik/python-nodejs:python3.10-nodejs18-alpine
 
 # set work directory
 WORKDIR /usr/src/app
@@ -16,14 +16,14 @@ RUN apk update \
     yarn
 
 # Python 3.11 stuff
-RUN rm /usr/lib/python3.11/EXTERNALLY-MANAGED
+# RUN rm /usr/lib/python3.11/EXTERNALLY-MANAGED
 
 # setup python and pip since we're using node image as base
-RUN python3 -m ensurepip && \
-    rm -r /usr/lib/python*/ensurepip && \
-    pip3 install --upgrade pip setuptools==45 && \
-    if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
-    rm -r /root/.cache
+# RUN python3 -m ensurepip && \
+#     rm -r /usr/lib/python*/ensurepip && \
+#     pip3 install --upgrade pip setuptools==45 && \
+#     if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
+#     rm -r /root/.cache
 
 # install dependencies
 RUN pip install --upgrade pip
@@ -35,4 +35,4 @@ RUN pip install -r requirements-dev.txt
 RUN yarn install --frozen-lockfile --non-interactive --no-progress --ignore-optional
 
 # run entrypoint.sh
-ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
+# ENTRYPOINT ["/usr/src/app/entrypoint.sh"]

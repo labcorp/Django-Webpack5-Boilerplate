@@ -1,6 +1,9 @@
 #!/bin/sh
 
-if [[ -z $WARMUP ]]; then
+BOOTED="./BOOTED"
+# Remove BOOTED file to run this again
+
+if [ ! -e $BOOTED ] || [ "$1" == "FORCE" ]; then
   # python manage.py flush --no-input
   python manage.py migrate
 
@@ -16,7 +19,9 @@ if [[ -z $WARMUP ]]; then
   mkdir -p _media
 
   echo "WARMUP COMPLETED SUCCESSFULLY"
-  export WARMUP='done'
+  touch $BOOTED
 fi
 
-exec "$@"
+if [ "$1" != "FORCE" ]; then
+  exec "$@"
+fi

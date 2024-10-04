@@ -1,3 +1,4 @@
+# pylint: disable=C0415,C0103,C0301
 import logging
 
 logger = logging.getLogger('qrhub')
@@ -9,7 +10,7 @@ logging_formats = {
 class DBHandler(logging.Handler):
     def emit(self, record):
         from apps.core.models import Log
-        
+
         payload = {
             'filename': record.filename,
             'function_name': record.funcName,
@@ -25,7 +26,7 @@ class DBHandler(logging.Handler):
         Log.objects.create(**payload)
 
 
-class ColoredFormatter(logging.Formatter):    
+class ColoredFormatter(logging.Formatter):
     """Logging Formatter to add colors"""
 
     reset = "\x1b[0m"
@@ -36,16 +37,16 @@ class ColoredFormatter(logging.Formatter):
     blue = "\x1b[36;21m"
     yellow = "\x1b[33;21m"
     grey = "\x1b[37;21m"
-    
+
     def format(self, record):
         FORMATS = {
-            logging.DEBUG: self.green + self._fmt + self.reset,
-            logging.INFO: self.blue + self._fmt + self.reset,
-            logging.WARNING: self.yellow + self._fmt + self.reset,
-            logging.ERROR: self.red + self._fmt + self.reset,
-            logging.CRITICAL: self.bold_red + self._fmt + self.reset
+            logging.DEBUG: self.green + str(self._fmt) + self.reset,
+            logging.INFO: self.blue + str(self._fmt) + self.reset,
+            logging.WARNING: self.yellow + str(self._fmt) + self.reset,
+            logging.ERROR: self.red + str(self._fmt) + self.reset,
+            logging.CRITICAL: self.bold_red + str(self._fmt) + self.reset
         }
-        
+
         log_fmt = FORMATS.get(record.levelno)
         formatter = logging.Formatter(log_fmt)
         return formatter.format(record)

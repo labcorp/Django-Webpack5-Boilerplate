@@ -1,3 +1,5 @@
 {
-    "reportIncompatibleVariableOverride": false
+    "reportIncompatibleVariableOverride": false,
+    "reportAttributeAccessIssue": false,
+    "reportArgumentType": false
 }

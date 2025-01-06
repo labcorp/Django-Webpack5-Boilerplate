@@ -70,7 +70,7 @@ module.exports = env => {
                 jQuery: 'jquery'
             }),
             new MiniCssExtractPlugin({
-                filename: dev_mode ? '[name].css' : '[name].min.css',
+                filename: dev_mode ? '[name].css' : '[name].[contenthash].min.css',
             }),
         ],
 
@@ -82,7 +82,8 @@ module.exports = env => {
         },
 
         output: {
-            filename: dev_mode ? '[name].js' : '[name].min.js',
+            clean: true,
+            filename: dev_mode ? '[name].js' : '[name].[contenthash].min.js',
             path: build_path.dest,
             publicPath: build_path.pub
         }

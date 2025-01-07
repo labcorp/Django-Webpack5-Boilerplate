@@ -1,4 +1,4 @@
 -r requirements.txt
-debugpy==1.8.9
+debugpy==1.8.11
 pylint
 pylint-django
